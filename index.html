@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="courseTest">
+<head>
+	<title>Angular Course</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="canonical" href="" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="/js/myList.js"></script>
+</head>
+<body>
+	<div style="height:50px; background:{{myColor}}">
+		<input type="text" ng-model="myColor">
+	</div>
+	<div ng-controller="testController">
+		<input type="text" ng-model="search" placeholder="Search">
+		<ul>
+			<li ng-repeat="item in myList | filter:search">{{item.name}} - <em>{{item.age}}</em></li>
+		</ul>
+		<form ng-submit="addPerson()">
+			<input type="text" palceholder="Name" ng-model="name">
+			<input type="text" palceholder="Age" ng-model="age">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>
