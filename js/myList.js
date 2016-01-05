@@ -1,16 +1,20 @@
-angular.module("courseTest", [])
-	.controller("testController", function($scope){
-		$scope.myList = [
-			{name:'Cesar',age:27},
-			{name:'Sofia',age:16},
-			{name:'Silvia',age:51},
-			{name:'Ruben',age:52},
-			{name:'Norma',age:36},
-			{name:'Sergio',age:32}
+angular.module("courseTest", ['ngAnimate'])
+	.controller("testController", function(){
+		var dirList = this;
+
+		dirList.toggle = false;
+
+		dirList.myList = [
+			{name:'Cesar',age:27,img:'/img/user2.jpg'},
+			{name:'Sofia',age:16,img:'/img/user3.jpg'},
+			{name:'Silvia',age:51,img:'/img/user3.jpg'},
+			{name:'Ruben',age:52,img:'/img/user1.jpg'},
+			{name:'Norma',age:36,img:'/img/user3.jpg'},
+			{name:'Sergio',age:32,img:'/img/user5.jpg'}
 		];
-		$scope.addPerson = function(){
-			$scope.myList.push({name: $scope.name, age: $scope.age});
-			$scope.name='';
-			$scope.age=0;
+		dirList.addPerson = function(){
+			dirList.myList.push({name: dirList.name, age: dirList.age});
+			dirList.name='';
+			dirList.age=0;
 		}
 	});
